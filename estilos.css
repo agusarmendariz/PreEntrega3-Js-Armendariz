@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.navbar-brand{
+    padding: 15px;
+}
+.nav-item{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 300px;
+}
