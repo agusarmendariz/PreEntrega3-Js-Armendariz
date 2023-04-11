@@ -1,8 +1,6 @@
 const vaciarCarrito = document.querySelector("#vaciarCarrito");
 const precioTotal = document.querySelector("#precioTotal");
 
-// Profe no logré hacer que funcione el boton de vaciarCarrito y tampoco que aparezca el total del precio, 
-// probé de varias maneras pero no pude :(
 
 
 const guardarEntradas=(eventos)=>{
@@ -15,15 +13,18 @@ const cargarEntradas =()=>{
 const carritoVacio=()=>{
  vaciarCarrito.addEventListener("click", () => {
     carrito.length = [];
-   
+   mostrarCarrito();
+   botonCarrito();
+
  })
 } 
+console.log("vaciar",carritoVacio());
 
 
-// const vaciarCarrito=()=>{
-//   localStorage.removeItem("Carrito")
+// const carritoVacio=()=>{
+//   localStorage.removeItem("carrito")
 //   mostrarCarrito();
-//   botonCarrito()
+//   // botonCarrito()
 // }
 
 const buscarEvento =(id)=>{
@@ -72,17 +73,35 @@ const eliminarProducto=(id)=> {
 
 
 const totalPagarCarrito=()=> {
-  let entradas = cargarProductosCarrito(); 
-  
+  let entradas = cargarEntradas(); 
   return precioTotal.innerText= entradas.reduce((acc, item) =>acc += item.cantidad * item.precio, 0);
 }
-// const totalPagarCarrito=()=> {
-//   let entradas = cargarProductosCarrito(); 
-  
-//   return  entradas.reduce((acc, item) =>acc += item.cantidad * item.precio, 0);
+// console.log(totalPagarCarrito());
+
+// const totalPrecio=()=>{
+//  let total= document.getElementById("precioTotal").innerText= totalPagarCarrito()
+//  console.log(total);
+// } 
+
+
+// const vaciarCarrito=()=>{
+// let vacio= "";
+// vacio=`<button type="button" class="btn btn-outline-warning" onclick="carritoVacio()" id="vaciarCarrito">
+// <img src="./assets/img/dustbin_120823.png" alt="" width="24">
+// </button>`
+// document.getElementById("vaciarCarrito").innerHTML=vacio
 // }
-
-
+//   const cambiarFooter=()=>{
+//  let modalFooter="";
+//  modalFooter=` <span class="px-5">Precio total:</span>
+//  <p class="text-center" id="precioTotal">${totalPagarCarrito()}</p>
+//  <button type="button" class="btn btn-outline-warning" onclick="vaciarCarrito()"  >
+//   <img src="./assets/img/dustbin_120823.png" alt="" width="24">
+//   <span id="vaciarCarrito"></span>
+//  </button>
+//  `
+//   document.getElementsByClassName(".modal .modal-footer").innerHTML=modalFooter;
+// }
 
 
 const botonCarrito=()=> {

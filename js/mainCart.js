@@ -20,12 +20,9 @@ carrito.forEach((entrada=>{
             </div>
           </div> `
 }))
-// modalFooter.innerHTML= ` <button type="button" class="btn btn-danger"  onclick="vaciarCarrito()" >
-// Vaciar carrito 
-// </button>
-// <span>Precio total:</span>
-// <p class="text-center" id="precioTotal"> ${totalPagarCarrito()}</p>`
+totalPagarCarrito();
 
 }
+
 mostrarCarrito();
 botonCarrito()
